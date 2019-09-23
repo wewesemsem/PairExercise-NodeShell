@@ -8,8 +8,11 @@ process.stdin.on('data', data => {
   if (cmd === 'pwd') {
     const pwdFunc = require('./pwd.js');
     pwdFunc();
+  } else if (cmd === 'ls') {
+    const lsFunc = require('./ls.js');
+    lsFunc();
   } else {
     process.stdout.write('You typed: ' + cmd);
+    process.stdout.write('\nprompt > ');
   }
-  process.stdout.write('\nprompt > ');
 });
